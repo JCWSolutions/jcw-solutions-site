@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /source/
 Sitemap: https://jcw.solutions/sitemap.xml
