@@ -119,15 +119,17 @@ th { font-weight: 650; background: var(--surface); }
 .app-icon-img { width: 72px; height: 72px; border-radius: 22.5%; box-shadow: 0 0 0 1px var(--line), 0 6px 18px rgba(0,0,0,.08); background: #fff; }
 .app-icon-img.lg { width: 96px; height: 96px; }
 
-/* iPhone frame around real screenshots */
-.phone { position: relative; margin: 0; width: 100%; max-width: 300px; aspect-ratio: 1320 / 2868;
-  border-radius: 14% / 6.5%; background: #0d0f12; padding: 3.2%;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 30px 60px -20px rgba(10,30,20,.35), 0 12px 24px -12px rgba(0,0,0,.25); }
-.phone img, .phone picture { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 11.5% / 5.4%; }
-
+/* iPhone frame around real screenshots (iPhone 17 Pro Max proportions).
+   The figure is a size container, so cqw = 1% of the phone's width: bezel and corners scale together.
+   The bezel is the image's own border; inner corner = outer radius minus bezel. */
+.phone { container-type: inline-size; position: relative; margin: 0; width: 100%; max-width: 300px; }
+.phone img { display: block; box-sizing: border-box; width: 100%; height: auto;
+  border: 2.8cqw solid #15171b; border-radius: 15.4cqw; background: #15171b;
+  box-shadow: 0 0 0 1px #3b3f46, 0 0 0 2.5px #0e1012,
+              0 40px 70px -30px rgba(10,30,20,.45), 0 18px 30px -18px rgba(0,0,0,.30); }
 /* Home hero with phone */
 .hero-split { display: grid; gap: 40px; align-items: center; }
-.hero-split .phone { max-width: 250px; margin: 0 auto; transform: rotate(3deg); }
+.hero-split .phone { max-width: 250px; margin: 0 auto; }
 @media (min-width: 900px) {
   .hero-split { grid-template-columns: 1.35fr 1fr; }
   .hero-split .phone { max-width: 290px; }
