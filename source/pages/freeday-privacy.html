@@ -8,7 +8,7 @@
     <ul>
       <li>Your financial data stays on your iPhone and in your own private iCloud. We don't receive a copy and we can't see it.</li>
       <li>Apple Wallet data is processed only on your device and is never sent to us or anyone else.</li>
-      <li>The optional goal assistant runs on your iPhone where it can. Otherwise, our UK server gets your question and a short summary of your totals. It never gets your transactions, and it keeps nothing.</li>
+      <li>Dawn, Freeday's optional AI assistant, runs on your iPhone where it can. Otherwise our UK server gets your question and a short summary of your totals, plus a summary of anything you attach, which you see first. It never gets your transaction list or Apple Wallet data, and it keeps nothing.</li>
       <li>No accounts, no ads, no analytics, no tracking, and we never sell or share your data.</li>
       <li>You can delete everything in the app at any time.</li>
     </ul>
@@ -20,7 +20,7 @@
       <li><a href="#stores">What Freeday stores, and where</a></li>
       <li><a href="#wallet">Apple Wallet (FinanceKit)</a></li>
       <li><a href="#connections">Connections you choose</a></li>
-      <li><a href="#assistant">The goal assistant</a></li>
+      <li><a href="#assistant">Dawn, the AI assistant</a></li>
       <li><a href="#not">What we don't do</a></li>
       <li><a href="#lawful">How we use information, and our lawful bases</a></li>
       <li><a href="#where">Where processing happens</a></li>
@@ -50,7 +50,7 @@
   <ul>
     <li>is processed only on your device;</li>
     <li>is stored as described in section 2, on your device and in your private iCloud;</li>
-    <li>is never sent to us or anyone else, including the goal assistant and any connection you choose;</li>
+    <li>is never sent to us or anyone else, including Dawn and any connection you choose;</li>
     <li>is never used for advertising, marketing or credit decisions, and is never sold.</li>
   </ul>
   <p>You can change or remove access at any time in your iPhone's Settings.</p>
@@ -66,20 +66,27 @@
   </ul>
   <p>Each service's own privacy policy applies to what you send it. Keys and tokens you enter are kept in your device's Keychain.</p>
 
-  <h2 id="assistant">5. The goal assistant</h2>
-  <p>The goal assistant answers questions about your goals and your money. It is optional.</p>
+  <h2 id="assistant">5. Dawn, the AI assistant</h2>
+  <p>Dawn answers questions about your goals and your money, and can make changes to your records when you ask and confirm. Dawn is optional.</p>
   <ul>
-    <li><strong>On iPhones with Apple Intelligence:</strong> it runs on your device using Apple's on-device model, and nothing leaves your iPhone.</li>
-    <li><strong>On other iPhones:</strong> you can use Freeday's goal assistant server, which we run in the UK. It receives only:
+    <li><strong>On iPhones with Apple Intelligence:</strong> Dawn runs on your device using Apple's on-device model, and nothing leaves your iPhone.</li>
+    <li><strong>On other iPhones:</strong> you can use Dawn's server, which we run in the UK. It receives only:
       <ul>
-        <li>your question;</li>
-        <li>your last few messages in the conversation;</li>
-        <li>a short summary of your totals, such as your net worth and this month's spending against your budget.</li>
+        <li>your question and your last few messages in the conversation;</li>
+        <li>a short summary of figures Freeday has already worked out, such as your net worth, your FI number and progress, your debt total and this month's spending by category against your budget;</li>
+        <li>a text summary of anything you attach to a question (see below).</li>
       </ul>
-      It never receives your transactions, merchant names or Apple Wallet data. Requests are tied only to a random key for your installation, not to you. We don't store your questions, answers or figures, they are not used to train any AI model, and no other company's AI receives them.</li>
-    <li><strong>On your own server:</strong> if you choose to use one, the same summary goes only to that server.</li>
+      It never receives your transaction list, merchant history or Apple Wallet data. Requests are tied only to a random key for your installation, not to you. We don't store your questions, answers, figures or attachment summaries, they are not used to train any AI model, and no other company's AI receives them.</li>
+    <li><strong>On your own server:</strong> if you choose to use one, the same information goes only to that server.</li>
   </ul>
-  <p>Data sent to our server is encrypted in transit (HTTPS).</p>
+  <h3>Attachments</h3>
+  <p>You can add a photo, screenshot, PDF or bank CSV to a question. Freeday turns it into a short text summary on your iPhone before anything is sent:</p>
+  <ul>
+    <li><strong>Photos and PDFs:</strong> the text Freeday reads from them. If you attach a statement or receipt, that text can include the amounts and descriptions on it.</li>
+    <li><strong>Bank CSV files:</strong> totals by month and category only, never the individual rows.</li>
+  </ul>
+  <p>You see the summary before sending and can edit or remove it. The file itself never leaves your iPhone, and any lines or receipts you choose to add to your records are handled on your iPhone.</p>
+  <p>Data sent to Dawn's server is encrypted in transit (HTTPS).</p>
 
   <h2 id="not">6. What we don't do</h2>
   <ul>
@@ -94,7 +101,7 @@
   <table>
     <thead><tr><th>Purpose</th><th>Lawful basis (UK GDPR)</th></tr></thead>
     <tbody>
-      <tr><td>Answering goal assistant questions on our server, when you choose to use it</td><td>Performance of our contract with you (providing the feature you asked for)</td></tr>
+      <tr><td>Answering questions you ask Dawn on our server, when you choose to use it</td><td>Performance of our contract with you (providing the feature you asked for)</td></tr>
       <tr><td>Limiting how many questions each installation can ask, to keep the service available</td><td>Legitimate interests</td></tr>
       <tr><td>Replying to support emails</td><td>Legitimate interests in helping you use Freeday</td></tr>
       <tr><td>Meeting legal obligations</td><td>Legal obligation</td></tr>
@@ -103,17 +110,17 @@
   <p>Everything else Freeday does with your data happens on your device and in your own iCloud, outside our control.</p>
 
   <h2 id="where">8. Where processing happens</h2>
-  <p>Our goal assistant server is in the United Kingdom. Data in your iCloud account is handled by Apple under its own terms. Services you connect (section 4) process data under their own terms and locations.</p>
+  <p>Dawn's server is in the United Kingdom. Data in your iCloud account is handled by Apple under its own terms. Services you connect (section 4) process data under their own terms and locations.</p>
 
   <h2 id="retention">9. How long we keep information</h2>
   <ul>
     <li><strong>Your financial data:</strong> we don't hold it. It stays on your device and in your iCloud until you delete it.</li>
-    <li><strong>Goal assistant questions and summaries:</strong> not stored. They are used to produce the answer and then discarded.</li>
+    <li><strong>Questions to Dawn, figure summaries and attachment summaries:</strong> not stored. They are used to produce the answer and then discarded.</li>
     <li><strong>Support emails:</strong> kept for up to 12 months.</li>
   </ul>
 
   <h2 id="security">10. Security</h2>
-  <p>Freeday relies on iOS security, including data protection on your device, the Keychain for keys you enter, and Apple's encrypted iCloud sync. Our goal assistant server only accepts encrypted connections. No system is perfectly secure; if a breach affecting your data occurs, we will act on it and tell you and the Information Commissioner's Office where the law requires.</p>
+  <p>Freeday relies on iOS security, including data protection on your device, the Keychain for keys you enter, and Apple's encrypted iCloud sync. Dawn's server only accepts encrypted connections. No system is perfectly secure; if a breach affecting your data occurs, we will act on it and tell you and the Information Commissioner's Office where the law requires.</p>
 
   <h2 id="rights">11. Your rights</h2>
   <p>Under UK GDPR you can ask what we hold about you, and ask us to correct or erase it, restrict or object to our use of it, or give you a copy. Email {{PRIVACY_EMAIL}} and we'll reply within one month. Apart from support emails, we hold nothing about you.</p>
