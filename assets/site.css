@@ -156,3 +156,81 @@ mark.todo { background: var(--todo-bg); color: var(--todo-ink); padding: 1px 6px
 .site-footer li { margin-bottom: 6px; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--ink); }
+
+/* ---------- Freeday scroll tour ----------
+   The phone stays pinned while the steps scroll past; the active step swaps the screen.
+   Behind the phone, Freeday's sunrise rises with progress through the tour (--rise, 0 to 1, set by site.js). */
+.tour { padding-bottom: 24px; }
+.tour-head { margin-bottom: 8px; }
+.tour-body { position: relative; display: grid; }
+.tour-stage { position: sticky; align-self: start; z-index: 2; display: flex; align-items: center; justify-content: center; gap: 28px; isolation: isolate; }
+.tour-phone { width: var(--phone-w); max-width: none; flex: none; z-index: 1; }
+.tour-screens { position: relative; aspect-ratio: 1320 / 2868; box-sizing: content-box; overflow: hidden;
+  border: 2.8cqw solid #15171b; border-radius: 15.4cqw; background: #15171b;
+  box-shadow: 0 0 0 1px #3b3f46, 0 0 0 2.5px #0e1012, 0 50px 90px -40px rgba(10,40,25,.55), 0 20px 34px -20px rgba(0,0,0,.35); }
+.tour-screen { position: absolute; inset: 0; }
+.tour-screen img { width: 100%; height: 100%; border: 0; border-radius: 12.6cqw; box-shadow: none; object-fit: cover; }
+html.js .tour-screen { opacity: 0; transform: translateY(7%) scale(.985); transition: opacity .55s ease, transform .7s cubic-bezier(.2,.75,.2,1); }
+html.js .tour-screen.is-before { transform: translateY(-5%) scale(.985); }
+html.js .tour-screen.is-active { opacity: 1; transform: none; }
+html:not(.js) .tour-screen:not(.is-active) { display: none; }
+
+.tour-sun { position: absolute; z-index: 0; left: 50%; bottom: 10%; width: min(680px, 96vw); pointer-events: none;
+  transform: translate(-50%, calc((1 - var(--rise, 0)) * 62%)); opacity: calc(.3 + .7 * var(--rise, 0)); }
+.sun-disc { display: block; width: 100%; aspect-ratio: 2 / 1; border-radius: 999px 999px 0 0;
+  background: radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--accent) 46%, transparent) 0%, color-mix(in srgb, var(--accent) 22%, transparent) 48%, color-mix(in srgb, var(--accent) 6%, transparent) 66%, transparent 72%); }
+.sun-bar { display: block; height: 18px; margin: 24px auto 0; width: 104%; margin-left: -2%; border-radius: 999px; background: color-mix(in srgb, var(--accent) 26%, transparent); }
+.sun-bar.short { width: 58%; margin: 18px auto 0; }
+
+.tour-rail { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
+.tour-rail button { all: unset; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; border-radius: 6px; }
+.tour-rail button::before { content: ""; width: 4px; height: 22px; border-radius: 4px; background: var(--line); transition: height .35s ease, background .35s ease; }
+.tour-rail button[aria-current="step"] { color: var(--ink); }
+.tour-rail button[aria-current="step"]::before { height: 40px; background: var(--accent); }
+.tour-rail button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+.tour-step h3 { font-size: clamp(28px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.025em; margin: 6px 0 14px; max-width: 13em; }
+.tour-step p { color: var(--muted); font-size: clamp(17px, 1.6vw, 20px); max-width: 26em; margin: 0; }
+.tour-step .tour-where { color: var(--accent); font-size: 15px; font-weight: 650; }
+html.js .tour-step { opacity: .22; transition: opacity .45s ease; }
+html.js .tour-step.is-active { opacity: 1; }
+
+/* Desktop: phone pinned on the left, one step per screen-height on the right. */
+@media (min-width: 900px) {
+  .tour-body { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); column-gap: 48px; }
+  .tour-stage { --phone-w: min(330px, calc((100svh - var(--header-h, 64px) - 120px) / 2.25)); top: var(--header-h, 64px); height: calc(100svh - var(--header-h, 64px)); }
+  .tour-rail { flex-direction: column; gap: 14px; }
+  .tour-step { min-height: calc(100svh - var(--header-h, 64px)); display: flex; flex-direction: column; justify-content: center; }
+  .tour-steps { padding-bottom: 30svh; }
+}
+
+/* Phones and tablets: phone, rail and caption are pinned together and fill the screen; the steps below are
+   invisible scroll distance (still read by screen readers), and the caption crossfades with the screen. */
+.tour-caps { display: none; }
+@media (max-width: 899px) {
+  .tour-stage { --phone-w: min(240px, calc((100svh - var(--header-h, 64px) - 250px) / 2.25));
+    top: var(--header-h, 64px); height: calc(100svh - var(--header-h, 64px)); flex-direction: column; justify-content: flex-start; gap: 14px;
+    margin: 0 -16px; padding: 16px 16px 0; overflow: hidden; background: var(--bg); }
+  .tour-rail { gap: 8px; }
+  .tour-rail button span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .tour-rail button::before { width: 18px; height: 4px; }
+  .tour-rail button[aria-current="step"]::before { width: 34px; height: 4px; }
+  .tour-sun { bottom: 34%; }
+  html.js .tour-caps { display: grid; width: 100%; max-width: 30rem; position: relative; z-index: 1; background: var(--bg); box-shadow: 0 -14px 14px -4px var(--bg); padding-top: 4px; }
+  .tour-sun .sun-bar { display: none; }
+  .tour-rail { position: relative; z-index: 2; }
+  .tour-cap { grid-area: 1 / 1; opacity: 0; transform: translateY(10px); transition: opacity .4s ease, transform .5s cubic-bezier(.2,.75,.2,1); }
+  .tour-cap.is-active { opacity: 1; transform: none; }
+  .tour-cap h3 { font-size: 26px; line-height: 1.12; letter-spacing: -0.02em; margin: 2px 0 8px; }
+  .tour-cap p { color: var(--muted); font-size: 16px; margin: 0; }
+  .tour-cap .tour-where { color: var(--accent); font-size: 14px; font-weight: 650; }
+  html.js .tour-steps { position: relative; z-index: 1; margin-top: calc(-100svh + var(--header-h, 64px)); padding-bottom: 30svh; }
+  html.js .tour-step { min-height: 65svh; opacity: 0; pointer-events: none; }
+  html:not(.js) .tour-step { padding: 24px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .tour-screen, html.js .tour-step, .tour-cap, .tour-rail button::before { transition: none; }
+  html.js .tour-screen, html.js .tour-screen.is-before { transform: none; }
+  .tour-sun { transform: translate(-50%, 12%); opacity: .8; }
+}
