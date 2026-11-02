@@ -10,6 +10,8 @@ BRAND = "JCW Solutions"
 
 # Legal entity behind the site and apps (Ltd name + number + registered office if a company)
 LEGAL_ENTITY = "JCW Digital Ltd"
+COMPANY_NUMBER = "17532846"
+REGISTERED_OFFICE = "6 Cornwallis Grove, London N9 0JS"
 COMPANY_DETAILS = "Registered in England and Wales, company number 17532846. Registered office: 6 Cornwallis Grove, London N9 0JS."
 
 CONTACT_EMAIL = '<a href="mailto:josh@jcw.solutions">josh@jcw.solutions</a>'

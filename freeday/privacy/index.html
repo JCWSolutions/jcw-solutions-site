@@ -11,15 +11,19 @@
 <meta property="og:url" content="https://jcw.solutions/freeday/privacy/">
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111A2B" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js" defer></script>
 </head>
-<body>
+<body data-section="freeday">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap">
-  <a class="brand" href="/" aria-label="JCW Solutions home"><span class="brand-mark" aria-hidden="true">JCW</span>JCW Solutions</a>
-  <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/#services">Consultancy</a><a href="/#products">Products</a><a href="/freeday/" aria-current="page">Freeday</a><a href="/#contact">Contact</a></nav>
+  <a class="brand" href="/" aria-label="JCW Solutions home"><svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><rect width="512" height="512" rx="81.92" class="tile"/><path d="M159.76448 473.5488Q146.11455999999998 473.5488 137.52832 466.28352Q128.94208 459.01824 128.94208 447.1296Q128.94208 438.3232 134.00576 432.59904Q139.06944 426.87488 146.99519999999998 426.87488Q154.48064 426.87488 157.56288 431.27808000000005Q160.64512 435.68128 162.62655999999998 441.40544Q164.608 447.1296 167.24992 451.53279999999995Q169.89184 455.936 175.61599999999999 455.936Q183.98208 455.936 188.38528 446.24896Q192.78848 436.56192 192.78848 418.94912V90.91072000000003Q192.78848 81.66399999999999 189.9264 78.58176Q187.06432 75.49952000000002 177.8176 73.73824000000002L167.69024 71.97696000000002Q161.96608 70.656 161.96608 66.69312000000002Q161.96608 61.84960000000001 168.57088 61.84960000000001H248.2688Q254.8736 61.84960000000001 254.8736 66.69312000000002Q254.8736 70.656 249.14944 71.97696000000002L239.02208 73.73824000000002Q229.77535999999998 75.49952000000002 226.91328 78.58176Q224.0512 81.66399999999999 224.0512 90.91072000000003V359.50592Q224.0512 412.34432 206.87872 442.94656Q189.70623999999998 473.5488 159.76448 473.5488Z" class="j"/><circle cx="358.40" cy="340.48" r="38.40" class="stop"/></svg><span>JCW <em>Solutions</em></span></a>
+  <nav class="nav" aria-label="Main"><a href="/#services">Consultancy</a><a href="/#about">About</a><a href="/freeday/" aria-current="page">Freeday</a><a href="/#contact">Contact</a></nav>
 </div></header>
 <main id="main">
 <div class="wrap"><article class="doc">
@@ -165,21 +169,23 @@
 <footer class="site-footer"><div class="wrap">
   <div class="cols">
     <div>
-      <p><strong>JCW Solutions</strong> — business and technology analysis, and privacy-first apps. Based in the UK.</p>
-      <p>&copy; 2026 JCW Solutions, a trading name of JCW Digital Ltd. Registered in England and Wales, company number 17532846. Registered office: 6 Cornwallis Grove, London N9 0JS.</p>
-      <p>Apple, iPhone, Apple Wallet, Apple Intelligence and iCloud are trademarks of Apple Inc.</p>
+      <a class="brand" href="/" aria-label="JCW Solutions home"><svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><rect width="512" height="512" rx="81.92" class="tile"/><path d="M159.76448 473.5488Q146.11455999999998 473.5488 137.52832 466.28352Q128.94208 459.01824 128.94208 447.1296Q128.94208 438.3232 134.00576 432.59904Q139.06944 426.87488 146.99519999999998 426.87488Q154.48064 426.87488 157.56288 431.27808000000005Q160.64512 435.68128 162.62655999999998 441.40544Q164.608 447.1296 167.24992 451.53279999999995Q169.89184 455.936 175.61599999999999 455.936Q183.98208 455.936 188.38528 446.24896Q192.78848 436.56192 192.78848 418.94912V90.91072000000003Q192.78848 81.66399999999999 189.9264 78.58176Q187.06432 75.49952000000002 177.8176 73.73824000000002L167.69024 71.97696000000002Q161.96608 70.656 161.96608 66.69312000000002Q161.96608 61.84960000000001 168.57088 61.84960000000001H248.2688Q254.8736 61.84960000000001 254.8736 66.69312000000002Q254.8736 70.656 249.14944 71.97696000000002L239.02208 73.73824000000002Q229.77535999999998 75.49952000000002 226.91328 78.58176Q224.0512 81.66399999999999 224.0512 90.91072000000003V359.50592Q224.0512 412.34432 206.87872 442.94656Q189.70623999999998 473.5488 159.76448 473.5488Z" class="j"/><circle cx="358.40" cy="340.48" r="38.40" class="stop"/></svg><span>JCW <em>Solutions</em></span></a>
+      <p class="tagline">Clear requirements. Workable solutions. Reliable delivery<span class="dot">.</span></p>
+      <p>Independent UK business and technical analysis, and privacy-conscious apps.<br><a href="mailto:josh@jcw.solutions">josh@jcw.solutions</a></p>
     </div>
     <div><h4>Freeday</h4><ul>
       <li><a href="/freeday/">About Freeday</a></li>
-      <li><a href="/freeday/privacy/">Freeday Privacy Policy</a></li>
-      <li><a href="/freeday/support/">Freeday Support</a></li>
+      <li><a href="/freeday/privacy/">Freeday privacy policy</a></li>
+      <li><a href="/freeday/support/">Freeday support</a></li>
     </ul></div>
     <div><h4>Company</h4><ul>
       <li><a href="/#services">Consultancy</a></li>
+      <li><a href="/#about">About</a></li>
       <li><a href="/#contact">Contact</a></li>
-      <li><a href="/privacy/">Website Privacy</a></li>
+      <li><a href="/privacy/">Website privacy</a></li>
     </ul></div>
   </div>
+  <p class="legal">&copy; 2026 JCW Solutions is a trading name of JCW Digital Ltd, registered in England &amp; Wales, company no. 17532846. Registered office: 6 Cornwallis Grove, London N9 0JS.<br>Apple, iPhone, Apple Wallet, Apple Intelligence and iCloud are trademarks of Apple Inc.</p>
 </div></footer>
 </body>
 </html>
