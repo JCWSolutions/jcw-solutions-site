@@ -74,7 +74,7 @@ ORG_LD = ("<script type=\"application/ld+json\">" + json.dumps({
     "name": "JCW Solutions", "legalName": C.LEGAL_ENTITY, "url": C.SITE_URL,
     "email": "josh@jcw.solutions", "logo": C.SITE_URL + "/assets/jcw-mark.svg",
     "founder": {"@type": "Person", "name": "Joshua Williams"},
-    "address": {"@type": "PostalAddress", "streetAddress": "6 Cornwallis Grove",
+    "address": {"@type": "PostalAddress", "streetAddress": "Cornwallis Grove",
                 "addressLocality": "London", "postalCode": "N9 0JS", "addressCountry": "GB"},
     "identifier": {"@type": "PropertyValue", "propertyID": "Companies House company number", "value": C.COMPANY_NUMBER},
     "sameAs": [C.COMPANIES_HOUSE_URL],
