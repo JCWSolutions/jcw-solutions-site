@@ -286,3 +286,10 @@ html.js .tour-step.is-active { opacity: 1; }
   html.js .tour-screen, html.js .tour-screen.is-before { transform: none; }
   .tour-sun { transform: translate(-50%, 12%); opacity: .8; }
 }
+
+/* Company information (home page) */
+.company { margin: 28px 0 0; border-top: 1px solid var(--line); max-width: 760px; }
+.company > div { display: grid; grid-template-columns: minmax(130px, 200px) 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.company dt { color: var(--stone, #6B7280); font-size: 15px; }
+.company dd { margin: 0; font-size: 16px; }
+@media (max-width: 560px) { .company > div { grid-template-columns: 1fr; gap: 2px; } }
