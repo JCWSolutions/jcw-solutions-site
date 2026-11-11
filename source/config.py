@@ -19,7 +19,7 @@ CONTACT_EMAIL = '<a href="mailto:josh@jcw.solutions">josh@jcw.solutions</a>'
 SUPPORT_EMAIL = '<a href="mailto:josh@jcw.solutions">josh@jcw.solutions</a>'
 PRIVACY_EMAIL = '<a href="mailto:josh@jcw.solutions">josh@jcw.solutions</a>'
 
-POLICY_EFFECTIVE = "27 October 2026"
+POLICY_EFFECTIVE = "11 November 2026"
 
 # Page-specific facts referenced as {{todo_KEY}}. Replace a value with plain
 # confirmed text (no todo()) once it is decided.
@@ -43,6 +43,6 @@ FACTS = {
     "SUPPORT_RESPONSE": "3 working days",
     "HOST": "GitHub Pages, provided by GitHub, Inc.",
     "ENQUIRY_RETENTION": "12 months",
-    "INAPP_DELETE": "with Settings → Delete all my data",
+    "INAPP_DELETE": "with Settings → Data → Delete all my data",
     "CHILDREN": "Freeday is intended for people aged 18 and over and is not directed at children.",
 }
