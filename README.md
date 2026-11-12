@@ -7,7 +7,7 @@ Website for JCW Solutions (a trading name of JCW Digital Ltd), served by GitHub 
 | Path | What it is |
 | --- | --- |
 | `index.html`, `freeday/`, `privacy/`, `404.html` | The built pages GitHub Pages serves. Don't edit these by hand. |
-| `assets/` | Shared stylesheet, Freeday icon and app screenshots (WebP, light and dark). |
+| `assets/` | Shared stylesheet, Freeday icon and app screenshots (JPEG, light and dark). |
 | `source/pages/` | Page templates. Edit these. |
 | `source/config.py` | Details used on several pages: company name, number, registered office, emails, policy date. |
 | `source/build.py` | Builds the pages from the templates into the repository root. |
@@ -30,7 +30,7 @@ The site follows the JCW Solutions brand guidelines v1.0 (November 2026):
 
 ## Screenshots
 
-The Freeday screenshots in `assets/shots/` come from the app's demo mode (fictional data). The `ci/site-screenshots` branch in the `freeday-financekit` repo builds the app on a GitHub macOS runner and commits fresh screenshots to its `site-screenshots-output` branch. Convert them to 600×1304 WebP and replace the files in `assets/shots/`.
+The Freeday screenshots in `assets/shots/` come from the app's demo mode (fictional data). The `ci/site-screenshots` branch in the `freeday-financekit` repo builds the app on a GitHub macOS runner and commits fresh screenshots to its `site-screenshots-output` branch. Convert them to 600×1304 JPEG (`sips -z 1304 600 -s format jpeg -s formatOptions 68`) and replace the files in `assets/shots/`. The November 2026 set, for the app's redesign in build 47, was taken from the iPhone simulator in demo mode.
 
 ## Hosting
 
